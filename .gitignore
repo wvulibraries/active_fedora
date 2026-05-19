@@ -16,3 +16,4 @@ gemfiles/*.gemfile.lock
 /fcrepo4-data
 /fcrepo4-test-data
 /spec/examples.txt
+.DS_Store

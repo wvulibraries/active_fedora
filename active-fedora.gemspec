@@ -1,52 +1,49 @@
 # -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "active_fedora/version"
+# stub: active-fedora 14.0.1 ruby lib
 
 Gem::Specification.new do |s|
-  s.name        = "active-fedora"
-  s.version     = ActiveFedora::VERSION
-  s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Matt Zumwalt", "McClain Looney", "Justin Coyne"]
-  s.email       = ["samvera-tech@googlegroups.com"]
-  s.homepage    = 'https://github.com/samvera/active_fedora'
-  s.summary     = 'A convenience libary for manipulating documents in the Fedora Repository.'
-  s.description = 'ActiveFedora provides for creating and managing objects in the Fedora Repository Architecture.'
-  s.license = "Apache-2.0"
-  s.metadata = { "rubygems_mfa_required" => "true" }
-  s.required_ruby_version = '>= 2.6'
+  s.name = "active-fedora".freeze
+  s.version = "14.0.1".freeze
 
-  s.add_dependency "activemodel", '>= 6.1'
-  s.add_dependency "activesupport", '>= 6.1'
-  s.add_dependency "active-triples", '>= 0.11.0', '< 2.0.0'
-  s.add_dependency "deprecation"
-  s.add_dependency 'faraday', '>= 2.0'
-  s.add_dependency 'faraday-encoding', '>= 0.0.5'
-  s.add_dependency 'faraday-follow_redirects'
-  s.add_dependency "ldp", '>= 0.7.0', '< 2'
-  s.add_dependency "mutex_m"
-  s.add_dependency 'rsolr', '>= 1.1.2', '< 3'
-  s.add_dependency "ruby-progressbar", '~> 1.0'
+  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
+  s.metadata = { "rubygems_mfa_required" => "true" } if s.respond_to? :metadata=
+  s.require_paths = ["lib".freeze]
+  s.authors = ["Matt Zumwalt".freeze, "McClain Looney".freeze, "Justin Coyne".freeze]
+  s.date = "1980-01-02"
+  s.description = "ActiveFedora provides for creating and managing objects in the Fedora Repository Architecture.".freeze
+  s.email = ["samvera-tech@googlegroups.com".freeze]
+  s.extra_rdoc_files = ["LICENSE".freeze, "README.md".freeze]
+  s.files = [".circleci/config.yml".freeze, ".fcrepo_wrapper".freeze, ".github_changelog_generator".freeze, ".gitignore".freeze, ".gitmodules".freeze, ".mailmap".freeze, ".rspec".freeze, ".rubocop.yml".freeze, ".rubocop_todo.yml".freeze, ".solr_wrapper".freeze, "CHANGELOG.md".freeze, "CODE_OF_CONDUCT.md".freeze, "CONTRIBUTING.md".freeze, "CONTRIBUTORS.md".freeze, "Gemfile".freeze, "History.txt".freeze, "LICENSE".freeze, "README.md".freeze, "Rakefile".freeze, "SUPPORT.md".freeze, "active-fedora.gemspec".freeze, "config/fcrepo_allow.txt".freeze, "config/fedora.yml".freeze, "config/service_mappings.yml".freeze, "config/solr.yml".freeze, "lib/active-fedora.rb".freeze, "lib/active_fedora.rb".freeze, "lib/active_fedora/aggregation.rb".freeze, "lib/active_fedora/aggregation/base_extension.rb".freeze, "lib/active_fedora/aggregation/list_source.rb".freeze, "lib/active_fedora/aggregation/ordered_reader.rb".freeze, "lib/active_fedora/aggregation/proxy.rb".freeze, "lib/active_fedora/association_hash.rb".freeze, "lib/active_fedora/association_relation.rb".freeze, "lib/active_fedora/associations.rb".freeze, "lib/active_fedora/associations/association.rb".freeze, "lib/active_fedora/associations/association_scope.rb".freeze, "lib/active_fedora/associations/basic_contains_association.rb".freeze, "lib/active_fedora/associations/belongs_to_association.rb".freeze, "lib/active_fedora/associations/builder/aggregation.rb".freeze, "lib/active_fedora/associations/builder/association.rb".freeze, "lib/active_fedora/associations/builder/basic_contains.rb".freeze, "lib/active_fedora/associations/builder/belongs_to.rb".freeze, "lib/active_fedora/associations/builder/collection_association.rb".freeze, "lib/active_fedora/associations/builder/directly_contains.rb".freeze, "lib/active_fedora/associations/builder/directly_contains_one.rb".freeze, "lib/active_fedora/associations/builder/filter.rb".freeze, "lib/active_fedora/associations/builder/has_and_belongs_to_many.rb".freeze, "lib/active_fedora/associations/builder/has_many.rb".freeze, "lib/active_fedora/associations/builder/has_subresource.rb".freeze, "lib/active_fedora/associations/builder/indirectly_contains.rb".freeze, "lib/active_fedora/associations/builder/orders.rb".freeze, "lib/active_fedora/associations/builder/property.rb".freeze, "lib/active_fedora/associations/builder/singular_association.rb".freeze, "lib/active_fedora/associations/builder/singular_property.rb".freeze, "lib/active_fedora/associations/collection_association.rb".freeze, "lib/active_fedora/associations/collection_proxy.rb".freeze, "lib/active_fedora/associations/contained_finder.rb".freeze, "lib/active_fedora/associations/container_proxy.rb".freeze, "lib/active_fedora/associations/contains_association.rb".freeze, "lib/active_fedora/associations/delete_proxy.rb".freeze, "lib/active_fedora/associations/directly_contains_association.rb".freeze, "lib/active_fedora/associations/directly_contains_one_association.rb".freeze, "lib/active_fedora/associations/filter_association.rb".freeze, "lib/active_fedora/associations/has_and_belongs_to_many_association.rb".freeze, "lib/active_fedora/associations/has_many_association.rb".freeze, "lib/active_fedora/associations/has_subresource_association.rb".freeze, "lib/active_fedora/associations/id_composite.rb".freeze, "lib/active_fedora/associations/indirectly_contains_association.rb".freeze, "lib/active_fedora/associations/null_validator.rb".freeze, "lib/active_fedora/associations/orders_association.rb".freeze, "lib/active_fedora/associations/rdf.rb".freeze, "lib/active_fedora/associations/record_composite.rb".freeze, "lib/active_fedora/associations/singular_association.rb".freeze, "lib/active_fedora/associations/singular_rdf.rb".freeze, "lib/active_fedora/attached_files.rb".freeze, "lib/active_fedora/attribute_assignment.rb".freeze, "lib/active_fedora/attribute_methods.rb".freeze, "lib/active_fedora/attribute_methods/dirty.rb".freeze, "lib/active_fedora/attribute_methods/read.rb".freeze, "lib/active_fedora/attribute_methods/write.rb".freeze, "lib/active_fedora/attributes.rb".freeze, "lib/active_fedora/attributes/active_triple_attribute.rb".freeze, "lib/active_fedora/attributes/node_config.rb".freeze, "lib/active_fedora/attributes/primary_key.rb".freeze, "lib/active_fedora/attributes/property_builder.rb".freeze, "lib/active_fedora/attributes/serializers.rb".freeze, "lib/active_fedora/autosave_association.rb".freeze, "lib/active_fedora/base.rb".freeze, "lib/active_fedora/caching_connection.rb".freeze, "lib/active_fedora/callbacks.rb".freeze, "lib/active_fedora/change_set.rb".freeze, "lib/active_fedora/checksum.rb".freeze, "lib/active_fedora/clean_connection.rb".freeze, "lib/active_fedora/cleaner.rb".freeze, "lib/active_fedora/common.rb".freeze, "lib/active_fedora/config.rb".freeze, "lib/active_fedora/containers/container.rb".freeze, "lib/active_fedora/containers/direct_container.rb".freeze, "lib/active_fedora/containers/indirect_container.rb".freeze, "lib/active_fedora/core.rb".freeze, "lib/active_fedora/core/fedora_id_translator.rb".freeze, "lib/active_fedora/core/fedora_uri_translator.rb".freeze, "lib/active_fedora/default_model_mapper.rb".freeze, "lib/active_fedora/delegated_attribute.rb".freeze, "lib/active_fedora/errors.rb".freeze, "lib/active_fedora/fedora.rb".freeze, "lib/active_fedora/fedora_attributes.rb".freeze, "lib/active_fedora/file.rb".freeze, "lib/active_fedora/file/attributes.rb".freeze, "lib/active_fedora/file/external.rb".freeze, "lib/active_fedora/file/streaming.rb".freeze, "lib/active_fedora/file_configurator.rb".freeze, "lib/active_fedora/file_io.rb".freeze, "lib/active_fedora/file_path_builder.rb".freeze, "lib/active_fedora/file_persistence.rb".freeze, "lib/active_fedora/file_relation.rb".freeze, "lib/active_fedora/files_hash.rb".freeze, "lib/active_fedora/fixity_service.rb".freeze, "lib/active_fedora/identifiable.rb".freeze, "lib/active_fedora/inbound_relation_connection.rb".freeze, "lib/active_fedora/indexers.rb".freeze, "lib/active_fedora/indexers/global_indexer.rb".freeze, "lib/active_fedora/indexers/null_indexer.rb".freeze, "lib/active_fedora/indexing.rb".freeze, "lib/active_fedora/indexing/default_descriptors.rb".freeze, "lib/active_fedora/indexing/descendant_fetcher.rb".freeze, "lib/active_fedora/indexing/descriptor.rb".freeze, "lib/active_fedora/indexing/field_mapper.rb".freeze, "lib/active_fedora/indexing/inserter.rb".freeze, "lib/active_fedora/indexing/map.rb".freeze, "lib/active_fedora/indexing/suffix.rb".freeze, "lib/active_fedora/indexing_service.rb".freeze, "lib/active_fedora/inheritable_accessors.rb".freeze, "lib/active_fedora/inheritance.rb".freeze, "lib/active_fedora/initializing_connection.rb".freeze, "lib/active_fedora/ldp_cache.rb".freeze, "lib/active_fedora/ldp_resource.rb".freeze, "lib/active_fedora/ldp_resource_service.rb".freeze, "lib/active_fedora/loadable_from_json.rb".freeze, "lib/active_fedora/locale/en.yml".freeze, "lib/active_fedora/log_subscriber.rb".freeze, "lib/active_fedora/model_classifier.rb".freeze, "lib/active_fedora/nested_attributes.rb".freeze, "lib/active_fedora/null_logger.rb".freeze, "lib/active_fedora/null_relation.rb".freeze, "lib/active_fedora/orders.rb".freeze, "lib/active_fedora/orders/collection_proxy.rb".freeze, "lib/active_fedora/orders/list_node.rb".freeze, "lib/active_fedora/orders/ordered_list.rb".freeze, "lib/active_fedora/orders/target_proxy.rb".freeze, "lib/active_fedora/pathing.rb".freeze, "lib/active_fedora/persistence.rb".freeze, "lib/active_fedora/persistence/null_identifier_service.rb".freeze, "lib/active_fedora/property.rb".freeze, "lib/active_fedora/query_result_builder.rb".freeze, "lib/active_fedora/querying.rb".freeze, "lib/active_fedora/railtie.rb".freeze, "lib/active_fedora/rake_support.rb".freeze, "lib/active_fedora/rdf.rb".freeze, "lib/active_fedora/rdf/fcrepo.rb".freeze, "lib/active_fedora/rdf/field_map.rb".freeze, "lib/active_fedora/rdf/field_map_entry.rb".freeze, "lib/active_fedora/rdf/indexing_service.rb".freeze, "lib/active_fedora/rdf/persistence.rb".freeze, "lib/active_fedora/rdf/project_hydra.rb".freeze, "lib/active_fedora/rdf/value_caster.rb".freeze, "lib/active_fedora/reflection.rb".freeze, "lib/active_fedora/relation.rb".freeze, "lib/active_fedora/relation/calculations.rb".freeze, "lib/active_fedora/relation/delegation.rb".freeze, "lib/active_fedora/relation/finder_methods.rb".freeze, "lib/active_fedora/relation/merger.rb".freeze, "lib/active_fedora/relation/query_methods.rb".freeze, "lib/active_fedora/relation/spawn_methods.rb".freeze, "lib/active_fedora/rspec_matchers.rb".freeze, "lib/active_fedora/rspec_matchers/belong_to_associated_active_fedora_object_matcher.rb".freeze, "lib/active_fedora/rspec_matchers/have_many_associated_active_fedora_objects_matcher.rb".freeze, "lib/active_fedora/rspec_matchers/have_predicate_matcher.rb".freeze, "lib/active_fedora/runtime_registry.rb".freeze, "lib/active_fedora/schema.rb".freeze, "lib/active_fedora/schema_indexing_strategy.rb".freeze, "lib/active_fedora/scoping.rb".freeze, "lib/active_fedora/scoping/default.rb".freeze, "lib/active_fedora/scoping/named.rb".freeze, "lib/active_fedora/serialization.rb".freeze, "lib/active_fedora/solr_hit.rb".freeze, "lib/active_fedora/solr_query_builder.rb".freeze, "lib/active_fedora/solr_service.rb".freeze, "lib/active_fedora/sparql_insert.rb".freeze, "lib/active_fedora/test_support.rb".freeze, "lib/active_fedora/type.rb".freeze, "lib/active_fedora/type/boolean.rb".freeze, "lib/active_fedora/type/value.rb".freeze, "lib/active_fedora/validations.rb".freeze, "lib/active_fedora/version.rb".freeze, "lib/active_fedora/versionable.rb".freeze, "lib/active_fedora/versions_graph.rb".freeze, "lib/active_fedora/with_metadata.rb".freeze, "lib/active_fedora/with_metadata/default_metadata_class_factory.rb".freeze, "lib/active_fedora/with_metadata/default_schema.rb".freeze, "lib/active_fedora/with_metadata/default_strategy.rb".freeze, "lib/active_fedora/with_metadata/metadata_node.rb".freeze, "lib/active_fedora/with_metadata/sweet_jpl_terms.rb".freeze, "lib/generators/active_fedora/config/USAGE".freeze, "lib/generators/active_fedora/config/config_generator.rb".freeze, "lib/generators/active_fedora/config/fedora/fedora_generator.rb".freeze, "lib/generators/active_fedora/config/fedora/templates/.fcrepo_wrapper.yml".freeze, "lib/generators/active_fedora/config/fedora/templates/fcrepo_wrapper_test.yml".freeze, "lib/generators/active_fedora/config/fedora/templates/fedora.yml".freeze, "lib/generators/active_fedora/config/solr/solr_generator.rb".freeze, "lib/generators/active_fedora/config/solr/templates/.solr_wrapper.yml".freeze, "lib/generators/active_fedora/config/solr/templates/solr.yml".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/_rest_managed.json".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/admin-extra.html".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/elevate.xml".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/mapping-ISOLatin1Accent.txt".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/protwords.txt".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/schema.xml".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/scripts.conf".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/solrconfig.xml".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/spellings.txt".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/stopwords.txt".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/stopwords_en.txt".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/synonyms.txt".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/xslt/example.xsl".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/xslt/example_atom.xsl".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/xslt/example_rss.xsl".freeze, "lib/generators/active_fedora/config/solr/templates/solr/conf/xslt/luke.xsl".freeze, "lib/generators/active_fedora/config/solr/templates/solr_wrapper_test.yml".freeze, "lib/generators/active_fedora/model/USAGE".freeze, "lib/generators/active_fedora/model/model_generator.rb".freeze, "lib/generators/active_fedora/model/templates/datastream.rb.erb".freeze, "lib/generators/active_fedora/model/templates/datastream_spec.rb.erb".freeze, "lib/generators/active_fedora/model/templates/model.rb.erb".freeze, "lib/generators/active_fedora/model/templates/model_spec.rb.erb".freeze, "lib/tasks/active_fedora_dev.rake".freeze, "script/console".freeze, "script/destroy".freeze, "script/generate".freeze]
+  s.homepage = "https://github.com/samvera/active_fedora".freeze
+  s.licenses = ["Apache-2.0".freeze]
+  s.required_ruby_version = Gem::Requirement.new(">= 2.6".freeze)
+  s.rubygems_version = "3.6.7".freeze
+  s.summary = "A convenience libary for manipulating documents in the Fedora Repository.".freeze
 
-  s.add_development_dependency "bixby"
-  s.add_development_dependency "equivalent-xml"
-  s.add_development_dependency 'fcrepo_wrapper', '~> 0.2'
-  s.add_development_dependency "github_changelog_generator"
-  s.add_development_dependency "rdoc"
-  s.add_development_dependency "rails"
-  s.add_development_dependency "rake"
-  s.add_development_dependency "rspec", "~> 3.5"
-  s.add_development_dependency "rspec-its"
-  s.add_development_dependency "simplecov", '~> 0.8'
-  s.add_development_dependency "solr_wrapper", "~> 4.0"
-  s.add_development_dependency "yard"
+  s.installed_by_version = "3.6.7".freeze
 
-  s.files         = `git ls-files`.split($OUTPUT_RECORD_SEPARATOR).select { |f| File.dirname(f) !~ %r{\A"?spec\/?} }
-  s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
-  s.extra_rdoc_files = [
-    "LICENSE",
-    "README.md"
-  ]
-  s.require_paths = ["lib"]
-  s.post_install_message = "ActiveFedora 16+ is built for Fedora 6+.  See Upgrading.md for important changes from ActiveFedora 15 and hints for using the Fedora upgrade tools to migrate from Fedora 4."
+  s.specification_version = 4
+
+  s.add_runtime_dependency(%q<activemodel>.freeze, [">= 5.1".freeze])
+  s.add_runtime_dependency(%q<activesupport>.freeze, [">= 5.1".freeze])
+  s.add_runtime_dependency(%q<active-triples>.freeze, [">= 0.11.0".freeze, "< 2.0.0".freeze])
+  s.add_runtime_dependency(%q<deprecation>.freeze, [">= 0".freeze])
+  s.add_runtime_dependency(%q<faraday>.freeze, [">= 2.0".freeze])
+  s.add_runtime_dependency(%q<faraday-encoding>.freeze, [">= 0.0.5".freeze])
+  s.add_runtime_dependency(%q<faraday-follow_redirects>.freeze, [">= 0".freeze])
+  s.add_runtime_dependency(%q<ldp>.freeze, [">= 0.7.0".freeze, "< 2".freeze])
+  s.add_runtime_dependency(%q<rsolr>.freeze, [">= 1.1.2".freeze, "< 3".freeze])
+  s.add_runtime_dependency(%q<ruby-progressbar>.freeze, ["~> 1.0".freeze])
+  s.add_development_dependency(%q<bixby>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<equivalent-xml>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<fcrepo_wrapper>.freeze, ["~> 0.2".freeze])
+  s.add_development_dependency(%q<github_changelog_generator>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<rdoc>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<rails>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<rake>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<rspec>.freeze, ["~> 3.5".freeze])
+  s.add_development_dependency(%q<rspec-its>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<simplecov>.freeze, ["~> 0.8".freeze])
+  s.add_development_dependency(%q<solr_wrapper>.freeze, ["~> 4.0".freeze])
+  s.add_development_dependency(%q<yard>.freeze, [">= 0".freeze])
 end

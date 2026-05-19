@@ -1,6 +1,5 @@
 require 'active_support/core_ext/object'
 require 'active_support/core_ext/class/attribute'
-require 'mutex_m'
 
 module ActiveFedora
   module AttributeMethods
@@ -14,7 +13,7 @@ module ActiveFedora
       end
     end
 
-    RESTRICTED_CLASS_METHODS = %w[private public protected allocate new name parent superclass].freeze
+    BLACKLISTED_CLASS_METHODS = %w[private public protected allocate new name parent superclass].freeze
 
     class GeneratedAttributeMethods < Module; end # :nodoc:
 
@@ -81,7 +80,7 @@ module ActiveFedora
       # A class method is 'dangerous' if it is already (re)defined by Active Record, but
       # not by any ancestors. (So 'puts' is not dangerous but 'new' is.)
       def dangerous_class_method?(method_name)
-        RESTRICTED_CLASS_METHODS.include?(method_name.to_s) || class_method_defined_within?(method_name, Base)
+        BLACKLISTED_CLASS_METHODS.include?(method_name.to_s) || class_method_defined_within?(method_name, Base)
       end
 
       def class_method_defined_within?(name, klass, superklass = klass.superclass) # :nodoc:
@@ -177,7 +176,7 @@ module ActiveFedora
       if value.is_a?(String) && value.length > 50
         "#{value[0, 50]}...".inspect
       elsif value.is_a?(Date) || value.is_a?(Time)
-        %("#{value.to_formatted_s(:db)}")
+        %("#{value.to_s(:db)}")
       elsif value.is_a?(Array) && value.size > 10
         inspected = value.first(10).inspect
         %(#{inspected[0...-1]}, ...])

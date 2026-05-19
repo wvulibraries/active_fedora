@@ -8,7 +8,6 @@ describe ActiveFedora::Base do
           index.as :symbol
         end
         property :abstract, predicate: ::RDF::Vocab::DC.abstract, multiple: false
-        property :date, predicate: ::RDF::Vocab::DC.date, multiple: false
       end
     end
 
@@ -17,25 +16,25 @@ describe ActiveFedora::Base do
     end
 
     subject(:history) { obj }
-    let(:obj) { BarHistory4.new(title: ['test1'], id: 'test:123', date: Date.new(2024, 1, 1)) }
+    let(:obj) { BarHistory4.new(title: ['test1'], id: 'test:123') }
 
     describe "#attribute_names" do
       context "on an instance" do
         it "lists the attributes" do
-          expect(history.attribute_names).to eq ["title", "abstract", "date"]
+          expect(history.attribute_names).to eq ["title", "abstract"]
         end
       end
 
       context "on a class" do
         it "lists the attributes" do
-          expect(BarHistory4.attribute_names).to eq ["title", "abstract", "date"]
+          expect(BarHistory4.attribute_names).to eq ["title", "abstract"]
         end
       end
     end
 
     describe "#inspect" do
       it "shows the attributes" do
-        expect(history.inspect).to eq "#<BarHistory4 id: \"test:123\", title: [\"test1\"], abstract: nil, date: \"2024-01-01 00:00:00\">"
+        expect(history.inspect).to eq "#<BarHistory4 id: \"test:123\", title: [\"test1\"], abstract: nil>"
       end
 
       describe "with no attributes" do
@@ -61,7 +60,7 @@ describe ActiveFedora::Base do
         end
 
         it "shows the library_id" do
-          expect(history.inspect).to eq "#<BarHistory2 id: nil, title: [], abstract: nil, date: nil, library_id: \"#{library.id}\">"
+          expect(history.inspect).to eq "#<BarHistory2 id: nil, title: [], abstract: nil, library_id: \"#{library.id}\">"
         end
       end
     end
